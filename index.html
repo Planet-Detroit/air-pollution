@@ -1,4 +1,4 @@
-<!-- Code from d3-graph-gallery.com -->
+<!-- Code inspired by d3-graph-gallery.com -->
 <!DOCTYPE html>
 <meta charset="utf-8">
 
@@ -83,6 +83,8 @@ d3.csv("https://raw.githubusercontent.com/Planet-Detroit/air-pollution/master/ad
   var mousemove = function(d) {
     tooltip
       .html("AQI: " + d.value)
+      .html("Day: " + d.group)
+      .html("Year: " + d.variable)
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -131,6 +133,14 @@ svg.append("text")
         .style("fill", "grey")
         .style("max-width", 400)
         .text("Detroit area air quality indicator values since 2000");
-
+  
+svg.append("text")
+        .attr("x", 0)
+        .attr("y", -600)
+        .attr("text-anchor", "left")
+        .style("font-size", "14px")
+        .style("fill", "grey")
+        .style("max-width", 400)
+        .text("SOURCE: EPA. Graphic by Eve Washington");
 
 </script>
