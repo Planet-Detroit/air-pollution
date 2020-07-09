@@ -82,9 +82,7 @@ d3.csv("https://raw.githubusercontent.com/Planet-Detroit/air-pollution/master/ad
   }
   var mousemove = function(d) {
     tooltip
-      .html("AQI: " + d.value)
-      .html("Day: " + d.group)
-      .html("Year: " + d.variable)
+      .html("AQI: " + d.value + " \n Day: " + d.group + "\n Year: " + d.variable)
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
